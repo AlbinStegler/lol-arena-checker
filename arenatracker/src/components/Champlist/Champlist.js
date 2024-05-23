@@ -8,7 +8,7 @@ const Champlist = () => {
     const [champions, setChampions] = useState([]);
     const [doneChamps, setDoneChamps] = useState([]);
 
-    const [summoner, setSummoner] = useState(null);
+    const [summoner, setSummoner] = useState("");
     const [champData, setChampData] = useState([]);
     const [lastChecked, setLastChecked] = useState(0);
     const [loading, setLoading] = useState(false);
@@ -63,12 +63,7 @@ const Champlist = () => {
         addToDone();
     }, [champData]);
 
-    function handleSummonerChange(e) {
-        setSummoner(e.target.value);
-        // if (e.target.value === "") {
-        //     setDoneChamps([]);
-        // }
-    }
+
 
 
 
@@ -113,13 +108,14 @@ const Champlist = () => {
     let GamesChecked = () => {
         return (<h1 className="last-checked">Game {lastChecked} - {lastChecked + matchesToCheck}</h1>)
     }; // {lastChecked}
-
-    let InputSummoner = () => {
-        return (<><div className="summoner">
-            <input onChange={(e) => handleSummonerChange(e)} type="text" placeholder="Summoner Name" name="summonername" />
-            <button onClick={getData}>Search</button>
-        </div></>)
+    function handleSummonerChange(e) {
+        setSummoner(e.target.value);
+        if (e.target.value === "") {
+            setDoneChamps([]);
+        }
     }
+
+
 
     let LoadMoreMatches = () => {
         return (<button className="load-more-button" onClick={getData}>Load more</button>)
@@ -132,7 +128,16 @@ const Champlist = () => {
                 loading ? <div className="loader"><PacmanLoader color="#36d7b7" className="loader" /></div> : null
             }
             {
-                search ? <LoadMoreMatches /> : <InputSummoner />
+                search ? <LoadMoreMatches /> : <div className="summoner">
+                    <input
+                        onChange={(e) => handleSummonerChange(e)}
+                        type="text"
+                        placeholder="Summoner Name"
+                        name="summonername"
+                        value={summoner}
+                    />
+                    <button onClick={getData}>Search</button>
+                </div>
             }
             <GamesChecked />
             <div className="lists-container">
