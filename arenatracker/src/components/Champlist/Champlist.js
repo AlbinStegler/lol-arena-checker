@@ -121,9 +121,9 @@ const Champlist = () => {
         return (<button className="load-more-button" onClick={getData}>Load more</button>)
     };
 
-
     return (
         <>
+
             {
                 loading ? <div className="loader"><PacmanLoader color="#36d7b7" className="loader" /></div> : null
             }
