@@ -65,9 +65,9 @@ const Champlist = () => {
 
     function handleSummonerChange(e) {
         setSummoner(e.target.value);
-        if (e.target.value === "") {
-            setDoneChamps([]);
-        }
+        // if (e.target.value === "") {
+        //     setDoneChamps([]);
+        // }
     }
 
 

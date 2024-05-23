@@ -1,3 +1,5 @@
+import url from './path';
+
 const champHelper = {
     getAllChampions: async () => {
         try {
@@ -17,7 +19,8 @@ const champHelper = {
     },
     getDoneChampions: async (summonerName, tag, start, count = 20) => {
         try {
-            const champions = await fetch(`http://localhost:3001/europe/matches/${summonerName}/${tag}/${start}/${count}`, {
+            let path = url.getPath();
+            const champions = await fetch(`${path}/europe/matches/${summonerName}/${tag}/${start}/${count}`, {
                 method: "GET",
             });
             return await champions.json();
