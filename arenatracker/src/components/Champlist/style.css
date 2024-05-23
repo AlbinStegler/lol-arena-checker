@@ -1,0 +1,110 @@
+.lists-container {
+    display: flex;
+    margin: auto;
+    width: 800px;
+}
+
+.champ-list {
+    margin: 0 auto;
+}
+
+.champion-img {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+}
+
+.champion-container {
+    border-radius: 5px;
+    width: 120px;
+    background-color: rgba(66, 66, 65, 0.381);
+    padding: 0.5em;
+    margin: 0.5em;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    justify-content: center;
+}
+
+.done {
+    filter: brightness(0.5);
+}
+
+.champ-list {
+    text-align: center;
+}
+
+.last-checked {
+    font-size: 1.8em;
+    color: white;
+    display: flex;
+
+    justify-content: center;
+}
+
+.champ-status {
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.champion-name {
+    font-size: 1.5em;
+    text-align: center;
+    margin: 0;
+    color: white;
+}
+
+.summoner input[type="text"] {
+    width: 500px;
+    padding: 0.5em;
+    margin: 0.5em;
+    font-size: 1.5em;
+    background-color: rgb(37, 37, 37);
+    box-shadow: 1px 1px 2px rgb(53, 53, 53);
+    border: none;
+}
+
+.summoner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.summoner button {
+    padding: 0.5em;
+    margin: 0.5em;
+    font-size: 1.5em;
+    background-color: rgb(119, 26, 26);
+    box-shadow: 1px 1px 2px rgb(34, 34, 34);
+    color: rgb(180, 180, 180);
+    border: none;
+}
+
+.load-more-button {
+    padding: 0.5em;
+    margin: 1em auto;
+    font-size: 1.5em;
+    background-color: rgb(119, 26, 26);
+    box-shadow: 1px 1px 2px rgb(34, 34, 34);
+    color: rgb(180, 180, 180);
+    border: none;
+    width: 300px;
+}
+
+button:hover {
+    background-color: rgb(167, 37, 37);
+    color: white;
+    cursor: pointer;
+}
+
+.loader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    /* Add This*/
+}
